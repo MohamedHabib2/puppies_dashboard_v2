@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Status {
+  WORKING
+  COMPLETED
+}
+
+model City {
+  id             String    @id @default(cuid())
+  name           String    @unique
+  status         Status    @default(WORKING)
+  totalFiles     Int       @default(0)
+  completedFiles Int       @default(0)
+  startedAt      DateTime?
+  finishedAt     DateTime?
+  lastUpdate     DateTime  @updatedAt
+}
