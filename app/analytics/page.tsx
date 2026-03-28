@@ -39,7 +39,7 @@ export default async function AnalyticsPage() {
     };
   }
 
-  cities.forEach(city => {
+  cities.forEach((city:any) => {
     const date = new Date(city.lastUpdate);
     const monthKey = `${date.getFullYear()}-${date.getMonth().toString().padStart(2, '0')}`;
 

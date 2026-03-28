@@ -47,7 +47,7 @@ export default function AnalyticsContent({
     setIsMounted(true);
   }, []);
 
-  console.log("Analytics Stats:", stats);
+  // console.log("Analytics Stats:", stats);
   return (
     <div className="flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <section>
